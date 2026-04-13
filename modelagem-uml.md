@@ -27,13 +27,23 @@ class Emprestimo {
 }
 
 Livro "1" --> "*" Emprestimo
-Leitor "1" --> "*" EmprestimosequenceDiagram
+Leitor "1" --> "*" Emprestimo
+```
+
+```mermaid
+sequenceDiagram
 actor Bibliotecario
 Bibliotecario ->> Sistema: solicitar empréstimo
 Sistema ->> Livro: verificar disponibilidade
 Sistema ->> Leitor: validar
 Sistema ->> Emprestimo: registrar
-Sistema -->> Bibliotecario: confirmaçãoflowchart TD
+Sistema -->> Bibliotecario: confirmação
+```
+
+## Diagrama de Atividades
+
+```mermaid
+flowchart TD
 A[Devolver livro] --> B{Atraso?}
 B -- Sim --> C[Calcular multa]
 B -- Não --> D[Sem multa]
@@ -42,3 +52,4 @@ D --> E
 E -- Sim --> F[Notificar leitor]
 E -- Não --> G[Fim]
 F --> G
+```
